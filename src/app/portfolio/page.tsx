@@ -3,11 +3,11 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, ArrowRight, PenTool, Compass, Code2, Rocket } from "lucide-react";
+import { ArrowUpRight, ArrowRight, GraduationCap, Compass, Trophy, Handshake } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { SectionHeading, Eyebrow } from "@/components/Section";
 
-const categories = ["All", "Web", "Brand", "Product", "Motion"] as const;
+const categories = ["All", "Workshops", "Lectures", "Competitions", "Expo"] as const;
 type Category = (typeof categories)[number];
 
 type Project = {
@@ -18,19 +18,19 @@ type Project = {
 };
 
 const projects: Project[] = [
-  { title: "Lumen Finance", category: "Web", year: "2025", tag: "Fintech platform" },
-  { title: "Northwind", category: "Brand", year: "2025", tag: "Identity system" },
-  { title: "Aura One", category: "Product", year: "2026", tag: "Wearable launch" },
-  { title: "Solstice", category: "Motion", year: "2024", tag: "Title sequence" },
-  { title: "Meridian", category: "Web", year: "2024", tag: "SaaS dashboard" },
-  { title: "Vellum", category: "Brand", year: "2026", tag: "Editorial brand" },
+  { title: "Bridge Building", category: "Competitions", year: "2025", tag: "Flagship contest" },
+  { title: "Aakaar Lectures", category: "Lectures", year: "2025", tag: "Expert series" },
+  { title: "AutoCAD Lab", category: "Workshops", year: "2024", tag: "Hands-on training" },
+  { title: "Civil Expo", category: "Expo", year: "2026", tag: "Industry showcase" },
+  { title: "Concrete Canoe", category: "Competitions", year: "2024", tag: "National event" },
+  { title: "STAAD.Pro Lab", category: "Workshops", year: "2026", tag: "Software workshop" },
 ];
 
 const process = [
-  { icon: Compass, title: "Discover", body: "We map the problem, the people and the possibilities." },
-  { icon: PenTool, title: "Design", body: "Systems, motion and prototypes that feel inevitable." },
-  { icon: Code2, title: "Build", body: "Performant, accessible, production-grade code." },
-  { icon: Rocket, title: "Launch", body: "Ship, measure, refine — then do it again." },
+  { icon: Compass, title: "Explore", body: "Discover events, workshops and competitions across the festival." },
+  { icon: GraduationCap, title: "Learn", body: "Soak up lectures and hands-on labs led by industry experts." },
+  { icon: Trophy, title: "Compete", body: "Battle it out in national-level civil engineering events." },
+  { icon: Handshake, title: "Network", body: "Meet recruiters, firms and peers from across the country." },
 ];
 
 export default function PortfolioPage() {
@@ -44,7 +44,7 @@ export default function PortfolioPage() {
         <div className="pointer-events-none absolute -right-10 top-20 h-96 w-96 rounded-full bg-accent/12 blur-[130px]" />
         <div className="mx-auto max-w-5xl text-center">
           <Reveal direction="none">
-            <Eyebrow>Selected work</Eyebrow>
+            <Eyebrow>Past editions</Eyebrow>
           </Reveal>
           <motion.h1
             initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
@@ -52,12 +52,12 @@ export default function PortfolioPage() {
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
             className="mt-6 text-balance text-5xl leading-[1.05] text-ink sm:text-7xl"
           >
-            Work we&apos;re <span className="text-gradient-accent">proud</span> of
+            Moments we&apos;re <span className="text-gradient-accent">proud</span> of
           </motion.h1>
           <Reveal delay={0.2}>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted">
-              A look at the brands, products and experiences we&apos;ve shaped —
-              each one crafted with intent, motion and obsessive detail.
+              A look back at the events, competitions and exhibitions that have
+              defined Aakaar — a beacon of excellence since 2009.
             </p>
           </Reveal>
         </div>
@@ -128,10 +128,10 @@ export default function PortfolioPage() {
       {/* ABOUT / PROCESS */}
       <section className="mx-auto max-w-6xl px-5 py-24">
         <SectionHeading
-          eyebrow="How we work"
-          title="A process built for"
-          highlight="great outcomes"
-          subtitle="Four deliberate stages that take an idea from a blank page to something people love to use."
+          eyebrow="The journey"
+          title="From curious to"
+          highlight="civil pro"
+          subtitle="Four ways Aakaar takes you from spectator to champion."
         />
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {process.map((step, i) => (
@@ -157,17 +157,17 @@ export default function PortfolioPage() {
           <div className="glass-strong relative overflow-hidden rounded-[2rem] px-6 py-16 text-center sm:px-16">
             <div className="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-accent2/15 blur-[80px]" />
             <h2 className="relative text-balance text-4xl text-ink sm:text-5xl">
-              Have a project in <span className="text-gradient-accent">mind</span>?
+              Want to be part of <span className="text-gradient-accent">Aakaar</span>?
             </h2>
             <p className="relative mx-auto mt-5 max-w-lg text-lg text-muted">
-              We take on a handful of partners each quarter. Let&apos;s see if
-              we&apos;re a fit.
+              Registrations for the next edition are open. Bring your college
+              and compete with the best.
             </p>
             <Link
               href="/community"
               className="group relative mt-9 inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 font-semibold text-bg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-ink/20"
             >
-              Let&apos;s talk
+              Register now
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

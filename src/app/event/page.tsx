@@ -31,18 +31,19 @@ function useCountdown(target: Date) {
 }
 
 const agenda = [
-  { time: "09:00", title: "Doors & welcome coffee", desc: "Networking in the glass atrium." },
-  { time: "10:00", title: "Keynote — The Shape of Tomorrow", desc: "Vision for motion-first product design." },
-  { time: "12:30", title: "Hands-on design lab", desc: "Build a landing page live with the Aakaar system." },
-  { time: "15:00", title: "Panel — Craft at scale", desc: "How studios keep quality while shipping fast." },
-  { time: "18:00", title: "Showcase & after-party", desc: "Demos, music and a accenten-hour rooftop." },
+  { time: "09:00", title: "Inauguration & welcome", desc: "Lighting of the lamp and keynote to open the festival." },
+  { time: "10:30", title: "Hands-on workshops", desc: "Industry software, simulation and design, led by experts." },
+  { time: "13:00", title: "Aakaar Lecture Series", desc: "Globally renowned voices in civil engineering take the stage." },
+  { time: "15:00", title: "Panel Discussion", desc: "A flagship round-table with leaders across the industry." },
+  { time: "17:00", title: "Civil Expo & CENEX", desc: "Exhibitions, products and national-level innovation on display." },
+  { time: "19:00", title: "Prize ceremony & culturals", desc: "Celebrating the winners, followed by a night of music." },
 ];
 
 const speakers = [
-  { name: "Aria Voss", role: "Design Director, Lumen", initials: "AV" },
-  { name: "Kenji Mori", role: "Founder, Northwind", initials: "KM" },
-  { name: "Priya Nair", role: "Head of Motion, Aakaar", initials: "PN" },
-  { name: "Leo Marchetti", role: "Creative Lead, Studio Sol", initials: "LM" },
+  { name: "Dr. Arjun Mehta", role: "Structural Engineer", initials: "AM" },
+  { name: "Ritu Sharma", role: "Urban Planner", initials: "RS" },
+  { name: "Vikram Iyer", role: "Geotechnical Expert", initials: "VI" },
+  { name: "Neha Kulkarni", role: "Construction Tech Lead", initials: "NK" },
 ];
 
 export default function EventPage() {
@@ -70,7 +71,7 @@ export default function EventPage() {
 
         <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
           <Reveal direction="none">
-            <Eyebrow>Aakaar Summit 2026</Eyebrow>
+            <Eyebrow>16th Edition · IIT Bombay</Eyebrow>
           </Reveal>
           <motion.h1
             initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
@@ -78,7 +79,7 @@ export default function EventPage() {
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
             className="mt-7 text-balance text-5xl leading-[1.05] text-ink sm:text-7xl"
           >
-            The Shape of <span className="text-gradient-accent">Tomorrow</span>
+            Aakaar <span className="text-gradient-accent">2026</span>
           </motion.h1>
 
           <Reveal delay={0.2}>
@@ -87,7 +88,7 @@ export default function EventPage() {
                 <CalendarDays className="h-4 w-4 text-accent" /> {dateLabel}
               </span>
               <span className="inline-flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-accent" /> The Glass Atrium, Bengaluru
+                <MapPin className="h-4 w-4 text-accent" /> IIT Bombay, Powai, Mumbai
               </span>
               <span className="inline-flex items-center gap-2">
                 <Clock className="h-4 w-4 text-accent" /> 9:00 AM — Late
@@ -117,13 +118,13 @@ export default function EventPage() {
                 href="#tickets"
                 className="group inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 font-semibold text-bg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-ink/20"
               >
-                <Ticket className="h-4 w-4" /> Get your pass
+                <Ticket className="h-4 w-4" /> Register now
               </a>
               <a
                 href="#agenda"
                 className="inline-flex items-center gap-2 rounded-full border border-line px-8 py-4 font-medium text-ink transition-all hover:border-accent/50 hover:bg-ink/5"
               >
-                View agenda
+                View schedule
               </a>
             </div>
           </Reveal>
@@ -136,28 +137,28 @@ export default function EventPage() {
           <Reveal direction="right">
             <SectionHeading
               align="left"
-              eyebrow="About the summit"
-              title="One day to rethink"
-              highlight="how we build"
+              eyebrow="About the festival"
+              title="Three days that"
+              highlight="shape the field"
             />
             <p className="mt-6 text-lg leading-relaxed text-muted">
-              A single, intentional day with the people shaping the next decade
-              of digital products. Talks, hands-on labs and conversations that
-              actually change how you work — wrapped in an experience designed
-              down to the last pixel.
+              Aakaar brings together the brightest civil engineering minds from
+              the best institutions of the nation. Workshops, lectures, expos
+              and competitions — a stellar platform to showcase skills and learn
+              from the very best.
             </p>
             <p className="mt-4 leading-relaxed text-muted">
-              Limited to 300 seats so every attendee gets real access to
-              speakers, mentors and each other.
+              Hosted on the IIT Bombay campus, every edition adds more creative,
+              mind-tinkering events that make learning genuinely fun.
             </p>
           </Reveal>
           <Reveal direction="left" delay={0.15}>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { k: "300", v: "Curated seats" },
-                { k: "12", v: "Speakers & mentors" },
-                { k: "5", v: "Hands-on labs" },
-                { k: "1", v: "Unforgettable day" },
+                { k: "30+", v: "Events & competitions" },
+                { k: "50+", v: "Colleges nationwide" },
+                { k: "3", v: "Days of action" },
+                { k: "5000+", v: "Participants" },
               ].map((x) => (
                 <div key={x.v} className="glass rounded-2xl p-6 text-center">
                   <div className="font-serif text-4xl text-gradient-accent">{x.k}</div>
@@ -171,7 +172,7 @@ export default function EventPage() {
 
       {/* AGENDA */}
       <section id="agenda" className="mx-auto max-w-4xl px-5 py-16">
-        <SectionHeading eyebrow="Agenda" title="A day, perfectly" highlight="paced" />
+        <SectionHeading eyebrow="Schedule" title="A day, perfectly" highlight="paced" />
         <Stagger className="relative mt-14">
           <div className="absolute left-[6.5rem] top-2 hidden h-[calc(100%-1rem)] w-px bg-line sm:block" />
           {agenda.map((a) => (
@@ -196,9 +197,9 @@ export default function EventPage() {
       {/* SPEAKERS */}
       <section className="mx-auto max-w-6xl px-5 py-16">
         <SectionHeading
-          eyebrow="Speakers"
+          eyebrow="Speakers & guests"
           title="Learn from the"
-          highlight="best in craft"
+          highlight="best in the field"
         />
         <Stagger className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {speakers.map((sp) => (
@@ -222,19 +223,20 @@ export default function EventPage() {
         <Reveal>
           <div className="glass-strong relative overflow-hidden rounded-[2rem] px-6 py-16 text-center sm:px-16">
             <div className="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-accent/20 blur-[80px]" />
-            <Eyebrow>Limited seats</Eyebrow>
+            <Eyebrow>Open to all colleges</Eyebrow>
             <h2 className="relative mt-5 text-balance text-4xl text-ink sm:text-5xl">
-              Secure your <span className="text-gradient-accent">pass</span>
+              Register for{" "}
+              <span className="text-gradient-accent">Aakaar</span>
             </h2>
             <p className="relative mx-auto mt-5 max-w-lg text-lg text-muted">
-              Early-bird passes include the after-party and a year of community
-              access. Once they&apos;re gone, they&apos;re gone.
+              Bring your team, compete in national events and be part of Asia&apos;s
+              largest civil engineering festival. Registration is now open.
             </p>
             <Link
               href="/community"
               className="group relative mt-9 inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 font-semibold text-bg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-ink/20"
             >
-              Reserve my seat
+              Register your team
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

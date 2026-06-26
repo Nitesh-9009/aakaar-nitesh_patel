@@ -5,11 +5,10 @@ import Link from "next/link";
 import { motion, useMotionTemplate, useMotionValue, useSpring } from "framer-motion";
 import {
   ArrowRight,
-  Cpu,
-  Battery,
-  Feather,
-  Bluetooth,
-  Sparkles,
+  Building2,
+  Users,
+  Trophy,
+  Lightbulb,
   Star,
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
@@ -47,36 +46,36 @@ function TiltCard() {
     >
       <div className="flex h-full flex-col items-center justify-center rounded-[1.5rem] bg-gradient-to-br from-surface-2 via-bg to-bg">
         <div className="animate-float grid h-40 w-40 place-items-center rounded-full bg-gradient-to-br from-accent2 to-accent shadow-[0_0_60px_rgba(37,99,235,0.20)]">
-          <Sparkles className="h-16 w-16 text-bg" />
+          <Building2 className="h-16 w-16 text-bg" />
         </div>
-        <p className="mt-8 font-serif text-2xl text-ink">Aura One</p>
-        <p className="mt-1 text-sm text-muted">Crafted in titanium &amp; glass</p>
+        <p className="mt-8 font-serif text-2xl text-ink">CENEX</p>
+        <p className="mt-1 text-sm text-muted">Civil Engineering National Exhibition</p>
       </div>
       <span className="absolute right-6 top-6 rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent ring-1 ring-accent/30">
-        New
+        Flagship
       </span>
     </motion.div>
   );
 }
 
 const specs = [
-  { icon: Cpu, label: "Neural chip", value: "A-series 3nm" },
-  { icon: Battery, label: "Battery life", value: "38 hours" },
-  { icon: Feather, label: "Weight", value: "41 grams" },
-  { icon: Bluetooth, label: "Connectivity", value: "BT 5.4 / UWB" },
+  { icon: Building2, label: "Exhibitors", value: "100+ firms" },
+  { icon: Users, label: "Footfall", value: "10,000+" },
+  { icon: Trophy, label: "Competitions", value: "National level" },
+  { icon: Lightbulb, label: "On display", value: "Live demos" },
 ];
 
 const bento = [
   {
-    title: "Adaptive audio",
-    body: "Spatial sound that reshapes itself to your space in real time.",
+    title: "Product pavilions",
+    body: "Leading firms showcase the latest in construction tech, materials and design.",
     span: "sm:col-span-2",
   },
-  { title: "All-day comfort", body: "Featherlight, balanced, forgettable — in the best way." },
-  { title: "Titanium shell", body: "Aerospace-grade, endlessly recyclable." },
+  { title: "Live demonstrations", body: "Simulations, scale models and prototypes, in action." },
+  { title: "National competitions", body: "Go head-to-head with the best civil minds in the country." },
   {
-    title: "Gesture control",
-    body: "A flick, a tap, a turn. The interface disappears.",
+    title: "Networking",
+    body: "Meet recruiters, founders and academics shaping the field.",
     span: "sm:col-span-2",
   },
 ];
@@ -92,7 +91,7 @@ export default function ShowcasePage() {
         <div className="mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-2">
           <div>
             <Reveal direction="none">
-              <Eyebrow>Product showcase</Eyebrow>
+              <Eyebrow>Flagship event</Eyebrow>
             </Reveal>
             <motion.h1
               initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
@@ -100,12 +99,13 @@ export default function ShowcasePage() {
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
               className="mt-6 text-balance text-5xl leading-[1.05] text-ink sm:text-7xl"
             >
-              Meet <span className="text-gradient-accent">Aura One</span>
+              Inside <span className="text-gradient-accent">CENEX</span>
             </motion.h1>
             <Reveal delay={0.2}>
               <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
-                The most refined thing we&apos;ve ever made. Engineered to vanish
-                into your day and reappear exactly when you need it.
+                The Civil Engineering National Exhibition is Aakaar&apos;s grand
+                stage — where companies display their finest work and students
+                come to learn, compete and get inspired.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
@@ -114,12 +114,12 @@ export default function ShowcasePage() {
                   href="#specs"
                   className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-8 py-4 font-semibold text-bg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-ink/20"
                 >
-                  Explore specs
+                  Explore highlights
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
                 <span className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-8 py-4 font-medium text-ink">
-                  <span className="font-serif text-xl text-accent">$349</span>
-                  <span className="text-sm text-muted">/ free shipping</span>
+                  <span className="font-serif text-xl text-accent">Free</span>
+                  <span className="text-sm text-muted">entry · open to all</span>
                 </span>
               </div>
             </Reveal>
@@ -130,7 +130,7 @@ export default function ShowcasePage() {
                     <Star key={i} className="h-4 w-4 fill-accent text-accent" />
                   ))}
                 </span>
-                4.9 · 2,300+ reviews
+                Asia&apos;s largest · since 2009
               </div>
             </Reveal>
           </div>
@@ -146,9 +146,9 @@ export default function ShowcasePage() {
       {/* SPECS */}
       <section id="specs" className="mx-auto max-w-6xl px-5 py-20">
         <SectionHeading
-          eyebrow="Technical"
-          title="Obsessively"
-          highlight="engineered"
+          eyebrow="By the numbers"
+          title="A grand"
+          highlight="platform"
         />
         <div className="mt-14 grid gap-10 lg:grid-cols-2 lg:items-center">
           <Stagger className="space-y-3">
@@ -208,9 +208,9 @@ export default function ShowcasePage() {
       {/* BENTO FEATURES */}
       <section className="mx-auto max-w-6xl px-5 py-16">
         <SectionHeading
-          eyebrow="Features"
-          title="Details you feel,"
-          highlight="not just see"
+          eyebrow="Highlights"
+          title="More than an"
+          highlight="exhibition"
         />
         <Stagger className="mt-14 grid gap-5 sm:grid-cols-3">
           {bento.map((b) => (
@@ -228,12 +228,12 @@ export default function ShowcasePage() {
       {/* ABOUT / STORY */}
       <section className="mx-auto max-w-3xl px-5 py-20 text-center">
         <Reveal>
-          <Eyebrow>The story</Eyebrow>
+          <Eyebrow>In their words</Eyebrow>
           <h2 className="mt-6 text-balance font-serif text-3xl leading-snug text-ink sm:text-4xl">
-            “We removed everything that didn&apos;t matter, then perfected what
-            was left.”
+            “Civil Expo provides a grand platform for companies to display their
+            products — and for every attendee to learn.”
           </h2>
-          <p className="mt-6 text-muted">— The Aakaar product team</p>
+          <p className="mt-6 text-muted">— Aakaar, IIT Bombay</p>
         </Reveal>
       </section>
 
@@ -243,17 +243,17 @@ export default function ShowcasePage() {
           <div className="glass-strong relative overflow-hidden rounded-[2rem] px-6 py-16 text-center sm:px-16">
             <div className="pointer-events-none absolute -left-10 -bottom-10 h-48 w-48 rounded-full bg-accent/20 blur-[80px]" />
             <h2 className="relative text-balance text-4xl text-ink sm:text-5xl">
-              Hold the <span className="text-gradient-accent">future</span>
+              Be at <span className="text-gradient-accent">CENEX</span>
             </h2>
             <p className="relative mx-auto mt-5 max-w-lg text-lg text-muted">
-              Aura One ships worldwide with a 30-day return window and a two-year
-              warranty.
+              The exhibition runs across all three days of Aakaar, with free
+              entry for students and professionals alike.
             </p>
             <Link
               href="/portfolio"
               className="group relative mt-9 inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 font-semibold text-bg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-ink/20"
             >
-              See more work
+              See past editions
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

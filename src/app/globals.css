@@ -23,8 +23,8 @@
   --color-faint: #71717a;
 
   /* Fonts (wired in layout.tsx) */
-  --font-serif: var(--font-outfit), system-ui, sans-serif;
-  --font-sans: var(--font-worksans), system-ui, sans-serif;
+  --font-serif: var(--font-display), system-ui, sans-serif;
+  --font-sans: var(--font-body), system-ui, sans-serif;
 
   --ease-fluid: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -69,12 +69,14 @@ body::before {
   color: var(--color-ink);
 }
 
-/* Headings use the geometric display face (Outfit) */
+/* Headings use the tight display face (Inter Tight) */
 h1, h2, h3, h4, .font-serif {
   font-family: var(--font-serif);
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
+
+h1 { letter-spacing: -0.035em; }
 
 /* ---------- Utilities ---------- */
 

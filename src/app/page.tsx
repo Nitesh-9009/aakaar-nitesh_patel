@@ -5,12 +5,13 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   ArrowRight,
-  Rocket,
-  Gauge,
-  ShieldCheck,
-  Layers,
-  Wand2,
-  Globe,
+  Wrench,
+  Presentation,
+  Users,
+  Building2,
+  FlaskConical,
+  Trophy,
+  HardHat,
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { Stagger, StaggerItem } from "@/components/Stagger";
@@ -20,42 +21,42 @@ import Marquee from "@/components/Marquee";
 
 const features = [
   {
-    icon: Rocket,
-    title: "Launch in days",
-    body: "Pre-built flows and a design system that turns ideas into shippable products fast.",
+    icon: Wrench,
+    title: "Workshops",
+    body: "Hands-on training in simulation, design and construction software, led with real industry tools.",
   },
   {
-    icon: Gauge,
-    title: "Built for speed",
-    body: "Edge-rendered, image-optimised and scoring green on Core Web Vitals out of the box.",
+    icon: Presentation,
+    title: "Lectures",
+    body: "The globally renowned Aakaar lecture series, uniting leading experts in civil engineering.",
   },
   {
-    icon: ShieldCheck,
-    title: "Secure by default",
-    body: "Best-practice auth, hardened headers and OWASP-aware patterns baked in.",
+    icon: Users,
+    title: "Panel Discussions",
+    body: "Flagship round-tables with prominent figures from across the civil engineering world.",
   },
   {
-    icon: Layers,
-    title: "Composable",
-    body: "Mix and match modular blocks — landing, events, showcase, portfolio, community.",
+    icon: Building2,
+    title: "Civil Expo",
+    body: "A grand platform for companies to display their products and for attendees to learn.",
   },
   {
-    icon: Wand2,
-    title: "Motion-first",
-    body: "Scroll reveals, parallax and micro-interactions tuned for a premium feel.",
+    icon: FlaskConical,
+    title: "Lab Visits",
+    body: "Educational visits introducing students to the latest developments and evolving technologies.",
   },
   {
-    icon: Globe,
-    title: "Responsive everywhere",
-    body: "Pixel-perfect from 375px phones to ultra-wide displays, automatically.",
+    icon: Trophy,
+    title: "CENEX",
+    body: "The Civil Engineering National Exhibition — ideas and innovation from across the nation.",
   },
 ];
 
 const stats = [
-  { to: 120, suffix: "+", label: "Products launched" },
-  { to: 98, suffix: "%", label: "Client retention" },
-  { to: 40, suffix: "K", label: "Community members" },
-  { to: 12, suffix: "", label: "Design awards" },
+  { to: 16, suffix: "+", label: "Editions strong" },
+  { to: 50, suffix: "+", label: "Colleges nationwide" },
+  { to: 30, suffix: "+", label: "Events & competitions" },
+  { to: 5000, suffix: "+", label: "Participants" },
 ];
 
 export default function Home() {
@@ -87,7 +88,7 @@ export default function Home() {
 
         <motion.div style={{ opacity }} className="relative z-10 mx-auto max-w-4xl text-center">
           <Reveal direction="none">
-            <Eyebrow>Aakaar · The studio launchpad</Eyebrow>
+            <Eyebrow>Aakaar · IIT Bombay · Since 2009</Eyebrow>
           </Reveal>
 
           <motion.h1
@@ -96,9 +97,9 @@ export default function Home() {
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
             className="mt-7 text-balance text-5xl leading-[1.05] text-ink sm:text-7xl lg:text-8xl"
           >
-            Crafting <span className="text-gradient-accent">form</span>
+            Where civil engineering
             <br />
-            &amp; future.
+            takes <span className="text-gradient-accent">shape</span>.
           </motion.h1>
 
           <motion.p
@@ -107,9 +108,10 @@ export default function Home() {
             transition={{ duration: 0.9, delay: 0.35 }}
             className="mx-auto mt-7 max-w-xl text-pretty text-lg leading-relaxed text-muted"
           >
-            One studio, five experiences. Aakaar turns startups, events,
-            products, portfolios and communities into beautifully crafted,
-            motion-rich web experiences.
+            Aakaar is the annual technical festival of the Department of Civil
+            Engineering, IIT Bombay — and Asia&apos;s largest celebration of the
+            field. Workshops, lectures, exhibitions and competitions, all in one
+            place.
           </motion.p>
 
           <motion.div
@@ -119,17 +121,17 @@ export default function Home() {
             className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <Link
-              href="/showcase"
+              href="/event"
               className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 font-semibold text-bg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-ink/20"
             >
-              Explore the work
+              Explore the events
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
             <Link
-              href="/event"
+              href="/showcase"
               className="inline-flex items-center gap-2 rounded-full border border-line px-7 py-3.5 font-medium text-ink transition-all duration-300 hover:border-accent/50 hover:bg-ink/5"
             >
-              See upcoming event
+              Discover Civil Expo
             </Link>
           </motion.div>
         </motion.div>
@@ -152,35 +154,34 @@ export default function Home() {
 
       {/* ===== MARQUEE ===== */}
       <Marquee
-        items={["Startups", "Events", "Showcases", "Portfolios", "Communities"]}
+        items={["Workshops", "Lectures", "Panel Discussions", "Civil Expo", "CENEX", "Lab Visits"]}
       />
 
       {/* ===== ABOUT / CONTENT ===== */}
       <section id="about" className="mx-auto max-w-6xl px-5 py-28">
         <div className="grid items-center gap-14 lg:grid-cols-2">
           <Reveal direction="right">
-            <Eyebrow>About the studio</Eyebrow>
+            <Eyebrow>About Aakaar</Eyebrow>
             <h2 className="mt-6 text-4xl leading-tight text-ink sm:text-5xl">
-              We design the{" "}
-              <span className="text-gradient-accent">shape</span> of what
-              comes next.
+              Asia&apos;s largest{" "}
+              <span className="text-gradient-accent">civil</span> engineering
+              festival.
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-muted">
-              Aakaar — meaning <em>form</em> — is a multi-experience design
-              studio. We believe great products are felt before they&apos;re
-              understood. So we obsess over motion, hierarchy and the small
-              details that make an interface feel alive.
+              Since its inception in 2009, Aakaar has been a beacon of
+              excellence — a stellar platform for students nationwide to
+              showcase and elevate their skills to the highest level.
             </p>
             <p className="mt-4 leading-relaxed text-muted">
-              From a startup&apos;s first landing page to a thriving community
-              hub, every surface is crafted with the same care, the same system,
-              the same intent.
+              From hands-on workshops and globally renowned lectures to the
+              Civil Engineering National Exhibition, every edition instigates
+              students to innovate, create and learn.
             </p>
             <Link
-              href="/portfolio"
+              href="/event"
               className="group mt-8 inline-flex items-center gap-2 font-medium text-accent"
             >
-              View our portfolio
+              See the events
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Reveal>
@@ -207,7 +208,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="animate-float absolute -right-4 -top-4 grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-accent2 to-accent text-bg shadow-xl">
-                <Rocket className="h-7 w-7" />
+                <HardHat className="h-7 w-7" />
               </div>
             </div>
           </Reveal>
@@ -217,10 +218,10 @@ export default function Home() {
       {/* ===== FEATURES BENTO ===== */}
       <section className="mx-auto max-w-6xl px-5 py-12">
         <SectionHeading
-          eyebrow="Why Aakaar"
-          title="A system that"
-          highlight="scales with you"
-          subtitle="Every page type ships with the same polished foundation — motion, accessibility and performance, handled."
+          eyebrow="What's on"
+          title="Events that"
+          highlight="inspire & build"
+          subtitle="Six flagship formats that make learning hands-on, competitive and unforgettable."
         />
 
         <Stagger className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -245,26 +246,26 @@ export default function Home() {
             <div className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 rounded-full bg-accent/20 blur-[80px]" />
             <div className="pointer-events-none absolute -bottom-10 -right-10 h-48 w-48 rounded-full bg-accent2/15 blur-[80px]" />
             <h2 className="relative text-balance text-4xl text-ink sm:text-5xl">
-              Ready to give your idea a{" "}
-              <span className="text-gradient-accent">form</span>?
+              Be part of the next{" "}
+              <span className="text-gradient-accent">edition</span>.
             </h2>
             <p className="relative mx-auto mt-5 max-w-lg text-lg text-muted">
-              Tell us what you&apos;re building. We&apos;ll bring the craft, the
-              motion and the polish.
+              Register your college, compete in national events and learn from
+              the brightest minds in civil engineering.
             </p>
             <div className="relative mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
                 href="/community"
                 className="group inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 font-semibold text-bg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-ink/20"
               >
-                Join the community
+                Register now
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <a
-                href="mailto:hello@aakaar.studio"
+                href="mailto:contact@aakaariitb.org.in"
                 className="inline-flex items-center gap-2 rounded-full border border-line px-8 py-4 font-medium text-ink transition-all hover:border-accent/50 hover:bg-ink/5"
               >
-                Start a project
+                Contact the team
               </a>
             </div>
           </div>

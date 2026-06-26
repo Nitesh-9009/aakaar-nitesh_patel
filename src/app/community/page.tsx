@@ -17,34 +17,34 @@ import { SectionHeading, Eyebrow } from "@/components/Section";
 import Counter from "@/components/Counter";
 
 const stats = [
-  { to: 40, suffix: "K", label: "Members" },
-  { to: 120, suffix: "+", label: "Cities" },
-  { to: 850, suffix: "", label: "Events hosted" },
-  { to: 24, suffix: "/7", label: "Active chat" },
+  { to: 5000, suffix: "+", label: "Participants" },
+  { to: 50, suffix: "+", label: "Colleges" },
+  { to: 30, suffix: "+", label: "Events" },
+  { to: 16, suffix: "+", label: "Editions" },
 ];
 
 const benefits = [
-  { icon: MessagesSquare, title: "Real conversations", body: "Channels for every craft — design, code, motion, careers." },
-  { icon: Calendar, title: "Weekly sessions", body: "Live critiques, AMAs and workshops with working pros." },
-  { icon: Gift, title: "Member perks", body: "Tools, templates and event passes, on the house." },
-  { icon: Heart, title: "Genuine support", body: "Feedback that lifts you up and pushes you forward." },
+  { icon: MessagesSquare, title: "Learn & build", body: "Workshops and lectures with working professionals and academics." },
+  { icon: Calendar, title: "Compete nationally", body: "National-level events with real recognition and prizes." },
+  { icon: Gift, title: "Get noticed", body: "Certificates, prizes and visibility with leading firms." },
+  { icon: Heart, title: "Connect", body: "Meet civil enthusiasts from the best institutions nationwide." },
 ];
 
 const testimonials = [
   {
-    quote: "This community rebuilt my confidence. I shipped my first product because of the people here.",
-    name: "Maya R.",
-    role: "Product Designer",
+    quote: "Aakaar was the first time I competed at a national level. The exposure was unreal.",
+    name: "Ananya P.",
+    role: "Civil Engineering, NIT",
   },
   {
-    quote: "The weekly critiques are accent. Honest, kind and genuinely useful every single time.",
-    name: "Dev S.",
-    role: "Frontend Engineer",
+    quote: "The workshops are genuinely hands-on. I left knowing software I'd only read about.",
+    name: "Rohan D.",
+    role: "Final year, VJTI",
   },
   {
-    quote: "I found my co-founder in the #startups channel. Aakaar changed my trajectory.",
-    name: "Tobias K.",
-    role: "Founder",
+    quote: "The lecture series brought experts I never thought I'd hear in person. Inspiring.",
+    name: "Sara K.",
+    role: "Civil Engineering, COEP",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function CommunityPage() {
         <div className="pointer-events-none absolute left-1/2 top-10 h-96 w-96 -translate-x-1/2 rounded-full bg-accent/12 blur-[140px]" />
         <div className="mx-auto max-w-4xl text-center">
           <Reveal direction="none">
-            <Eyebrow>The Aakaar community</Eyebrow>
+            <Eyebrow>Join the festival</Eyebrow>
           </Reveal>
           <motion.h1
             initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
@@ -83,8 +83,8 @@ export default function CommunityPage() {
           </motion.h1>
           <Reveal delay={0.2}>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted">
-              40,000 designers, builders and dreamers sharing work, trading
-              feedback and shipping things they&apos;re proud of — together.
+              Thousands of civil engineering students from the best colleges —
+              learning, competing and building together at IIT Bombay.
             </p>
           </Reveal>
           <Reveal delay={0.3}>
@@ -99,7 +99,7 @@ export default function CommunityPage() {
                 </span>
               ))}
               <span className="grid h-11 w-11 place-items-center rounded-full border-2 border-bg bg-surface text-xs text-muted">
-                +40k
+                +5k
               </span>
             </div>
           </Reveal>
@@ -125,10 +125,10 @@ export default function CommunityPage() {
       {/* ABOUT / BENEFITS */}
       <section className="mx-auto max-w-6xl px-5 py-20">
         <SectionHeading
-          eyebrow="Why join"
+          eyebrow="Why participate"
           title="More than a"
-          highlight="Discord server"
-          subtitle="A genuine home for your craft — with the structure, people and energy to help you grow."
+          highlight="fest"
+          subtitle="A genuine platform for your craft — with the people, events and energy to help you grow."
         />
         <Stagger className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {benefits.map((b) => (
@@ -147,7 +147,7 @@ export default function CommunityPage() {
 
       {/* TESTIMONIALS */}
       <section className="mx-auto max-w-6xl px-5 py-12">
-        <SectionHeading eyebrow="Member stories" title="Real people," highlight="real growth" />
+        <SectionHeading eyebrow="Voices from Aakaar" title="Real students," highlight="real growth" />
         <Stagger className="mt-14 grid gap-5 lg:grid-cols-3">
           {testimonials.map((t) => (
             <StaggerItem key={t.name}>
@@ -179,10 +179,11 @@ export default function CommunityPage() {
               <Users className="h-7 w-7" />
             </span>
             <h2 className="relative mt-6 text-balance text-4xl text-ink sm:text-5xl">
-              Join the <span className="text-gradient-accent">circle</span>
+              Stay in the <span className="text-gradient-accent">loop</span>
             </h2>
             <p className="relative mx-auto mt-4 max-w-md text-muted">
-              Drop your email and we&apos;ll send your invite. Free, forever.
+              Drop your email for schedules, registration alerts and event
+              updates. No spam, ever.
             </p>
 
             {status === "done" ? (
@@ -211,7 +212,7 @@ export default function CommunityPage() {
                       setEmail(e.target.value);
                       if (status === "error") setStatus("idle");
                     }}
-                    placeholder="you@studio.com"
+                    placeholder="you@college.edu"
                     className="w-full rounded-full border border-line bg-surface px-5 py-3.5 text-ink placeholder:text-faint transition-colors focus:border-accent/50"
                     aria-invalid={status === "error"}
                   />
@@ -225,7 +226,7 @@ export default function CommunityPage() {
                   type="submit"
                   className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-7 py-3.5 font-semibold text-bg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-ink/20"
                 >
-                  Get invite
+                  Get updates
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </button>
               </form>

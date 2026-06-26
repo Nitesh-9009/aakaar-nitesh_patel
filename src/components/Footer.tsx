@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { Sparkles, Code2, AtSign, Globe2, MessageCircle, ArrowUpRight } from "lucide-react";
+import { Sparkles, AtSign, Globe2, MessageCircle, Mail, ArrowUpRight } from "lucide-react";
 import { NAV_LINKS } from "./nav-links";
 
 const socials = [
-  { icon: Code2, href: "https://github.com/Nitesh-9009", label: "GitHub" },
-  { icon: AtSign, href: "#", label: "Twitter / X" },
-  { icon: Globe2, href: "#", label: "Website" },
-  { icon: MessageCircle, href: "#", label: "Chat" },
+  { icon: AtSign, href: "https://www.instagram.com/aakaar_iitbombay/", label: "Instagram" },
+  { icon: Globe2, href: "https://www.linkedin.com/company/aakaariitb/", label: "LinkedIn" },
+  { icon: MessageCircle, href: "https://www.facebook.com/AakaariitBombay", label: "Facebook" },
+  { icon: Mail, href: "mailto:contact@aakaariitb.org.in", label: "Email" },
 ];
 
 export default function Footer() {
@@ -23,8 +23,8 @@ export default function Footer() {
               <span className="font-serif text-2xl text-ink">Aakaar</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
-              Crafting form &amp; future. One studio, five experiences — built
-              with intent, motion and a love for detail.
+              The annual technical festival of the Department of Civil
+              Engineering, IIT Bombay. Asia&apos;s largest — since 2009.
             </p>
             <div className="mt-6 flex gap-3">
               {socials.map(({ icon: Icon, href, label }) => (
@@ -67,25 +67,25 @@ export default function Footer() {
             </h4>
             <ul className="mt-5 space-y-3 text-sm text-muted">
               <li>
-                <a href="mailto:hello@aakaar.studio" className="transition-colors hover:text-ink">
-                  hello@aakaar.studio
+                <a href="mailto:contact@aakaariitb.org.in" className="transition-colors hover:text-ink">
+                  contact@aakaariitb.org.in
                 </a>
               </li>
-              <li>Remote · Worldwide</li>
+              <li>IIT Bombay, Powai, Mumbai 400076</li>
               <li className="pt-2">
-                <a
-                  href="mailto:hello@aakaar.studio"
+                <Link
+                  href="/community"
                   className="inline-flex items-center gap-1.5 rounded-full border border-accent/40 px-4 py-2 text-sm font-medium text-accent transition-all hover:bg-accent/10"
                 >
-                  Start a project <ArrowUpRight className="h-3.5 w-3.5" />
-                </a>
+                  Register now <ArrowUpRight className="h-3.5 w-3.5" />
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-line/60 pt-8 text-xs text-faint sm:flex-row">
-          <p>© {new Date().getFullYear()} Aakaar Studio. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Aakaar, IIT Bombay. All rights reserved.</p>
           <p>Designed &amp; built by Nitesh Patel.</p>
         </div>
       </div>

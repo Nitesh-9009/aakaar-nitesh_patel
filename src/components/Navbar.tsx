@@ -77,7 +77,7 @@ export default function Navbar() {
             href="/community"
             className="group inline-flex items-center gap-1.5 rounded-full bg-ink px-5 py-2 text-sm font-semibold text-bg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-ink/15"
           >
-            Join us
+            Register
           </Link>
         </div>
 
@@ -126,7 +126,7 @@ export default function Navbar() {
                   href="/community"
                   className="block rounded-2xl bg-ink px-4 py-3 text-center text-base font-semibold text-bg"
                 >
-                  Join us
+                  Register
                 </Link>
               </li>
             </ul>
