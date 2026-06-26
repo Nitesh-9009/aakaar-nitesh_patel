@@ -1,27 +1,26 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Jost } from "next/font/google";
+import { Outfit, Work_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 
-const bodoni = Bodoni_Moda({
-  variable: "--font-bodoni",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
 });
 
-const jost = Jost({
-  variable: "--font-jost",
+const workSans = Work_Sans({
+  variable: "--font-worksans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {
   title: "Aakaar — Crafting Form & Future",
   description:
-    "Aakaar is a premium multi-experience studio: startup launchpads, events, product showcases, portfolios and communities — designed with intent.",
+    "Aakaar is a professional multi-experience studio: startup launchpads, events, product showcases, portfolios and communities — designed with clarity.",
   keywords: ["Aakaar", "design studio", "startup", "events", "portfolio", "community"],
 };
 
@@ -33,7 +32,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bodoni.variable} ${jost.variable} h-full antialiased`}
+      className={`${outfit.variable} ${workSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <ScrollProgress />

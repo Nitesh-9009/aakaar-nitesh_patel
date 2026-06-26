@@ -17,7 +17,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-2">
-              <span className="grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-gold-bright to-gold text-bg">
+              <span className="grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-accent2 to-accent text-bg">
                 <Sparkles className="h-4 w-4" />
               </span>
               <span className="font-serif text-2xl text-ink">Aakaar</span>
@@ -32,7 +32,7 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="grid h-10 w-10 place-items-center rounded-full border border-line text-muted transition-all duration-300 hover:border-gold/50 hover:text-gold"
+                  className="grid h-10 w-10 place-items-center rounded-full border border-line text-muted transition-all duration-300 hover:border-accent/50 hover:text-accent"
                 >
                   <Icon className="h-4 w-4" />
                 </a>
@@ -75,7 +75,7 @@ export default function Footer() {
               <li className="pt-2">
                 <a
                   href="mailto:hello@aakaar.studio"
-                  className="inline-flex items-center gap-1.5 rounded-full border border-gold/40 px-4 py-2 text-sm font-medium text-gold transition-all hover:bg-gold/10"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-accent/40 px-4 py-2 text-sm font-medium text-accent transition-all hover:bg-accent/10"
                 >
                   Start a project <ArrowUpRight className="h-3.5 w-3.5" />
                 </a>

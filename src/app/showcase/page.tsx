@@ -46,13 +46,13 @@ function TiltCard() {
       className="glass relative aspect-square w-full max-w-md rounded-[2rem] p-8"
     >
       <div className="flex h-full flex-col items-center justify-center rounded-[1.5rem] bg-gradient-to-br from-surface-2 via-bg to-bg">
-        <div className="animate-float grid h-40 w-40 place-items-center rounded-full bg-gradient-to-br from-gold-bright to-gold shadow-[0_0_60px_rgba(232,180,60,0.4)]">
+        <div className="animate-float grid h-40 w-40 place-items-center rounded-full bg-gradient-to-br from-accent2 to-accent shadow-[0_0_60px_rgba(37,99,235,0.20)]">
           <Sparkles className="h-16 w-16 text-bg" />
         </div>
         <p className="mt-8 font-serif text-2xl text-ink">Aura One</p>
         <p className="mt-1 text-sm text-muted">Crafted in titanium &amp; glass</p>
       </div>
-      <span className="absolute right-6 top-6 rounded-full bg-gold/10 px-3 py-1 text-xs font-medium text-gold-soft ring-1 ring-gold/30">
+      <span className="absolute right-6 top-6 rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent ring-1 ring-accent/30">
         New
       </span>
     </motion.div>
@@ -88,7 +88,7 @@ export default function ShowcasePage() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden px-5 pt-36 pb-20">
-        <div className="pointer-events-none absolute left-1/2 top-1/3 h-96 w-96 -translate-x-1/2 rounded-full bg-gold/15 blur-[140px]" />
+        <div className="pointer-events-none absolute left-1/2 top-1/3 h-96 w-96 -translate-x-1/2 rounded-full bg-accent/15 blur-[140px]" />
         <div className="mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-2">
           <div>
             <Reveal direction="none">
@@ -100,7 +100,7 @@ export default function ShowcasePage() {
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
               className="mt-6 text-balance text-5xl leading-[1.05] text-ink sm:text-7xl"
             >
-              Meet <span className="text-gradient-gold italic">Aura One</span>
+              Meet <span className="text-gradient-accent">Aura One</span>
             </motion.h1>
             <Reveal delay={0.2}>
               <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
@@ -112,13 +112,13 @@ export default function ShowcasePage() {
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
                 <a
                   href="#specs"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-bright to-gold px-8 py-4 font-semibold text-bg transition-all duration-300 hover:shadow-[0_0_36px_rgba(232,180,60,0.45)]"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-8 py-4 font-semibold text-bg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-ink/20"
                 >
                   Explore specs
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
                 <span className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-8 py-4 font-medium text-ink">
-                  <span className="font-serif text-xl text-gold">$349</span>
+                  <span className="font-serif text-xl text-accent">$349</span>
                   <span className="text-sm text-muted">/ free shipping</span>
                 </span>
               </div>
@@ -127,7 +127,7 @@ export default function ShowcasePage() {
               <div className="mt-7 flex items-center gap-2 text-sm text-muted">
                 <span className="flex">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-gold text-gold" />
+                    <Star key={i} className="h-4 w-4 fill-accent text-accent" />
                   ))}
                 </span>
                 4.9 · 2,300+ reviews
@@ -158,15 +158,15 @@ export default function ShowcasePage() {
                   onClick={() => setActiveSpec(i)}
                   className={`flex w-full items-center gap-4 rounded-2xl border p-5 text-left transition-all duration-300 ${
                     activeSpec === i
-                      ? "border-gold/50 bg-gold/5"
-                      : "border-line bg-surface/40 hover:border-gold/30"
+                      ? "border-accent/50 bg-accent/5"
+                      : "border-line bg-surface/40 hover:border-accent/30"
                   }`}
                 >
                   <span
                     className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl transition-colors ${
                       activeSpec === i
-                        ? "bg-gold text-bg"
-                        : "bg-gold/10 text-gold"
+                        ? "bg-accent text-bg"
+                        : "bg-accent/10 text-accent"
                     }`}
                   >
                     <sp.icon className="h-5 w-5" />
@@ -192,10 +192,10 @@ export default function ShowcasePage() {
                 {(() => {
                   const Icon = specs[activeSpec].icon;
                   return (
-                    <Icon className="mx-auto h-24 w-24 text-gold" strokeWidth={1} />
+                    <Icon className="mx-auto h-24 w-24 text-accent" strokeWidth={1} />
                   );
                 })()}
-                <p className="mt-6 font-serif text-3xl text-gradient-gold">
+                <p className="mt-6 font-serif text-3xl text-gradient-accent">
                   {specs[activeSpec].value}
                 </p>
                 <p className="mt-1 text-muted">{specs[activeSpec].label}</p>
@@ -215,8 +215,8 @@ export default function ShowcasePage() {
         <Stagger className="mt-14 grid gap-5 sm:grid-cols-3">
           {bento.map((b) => (
             <StaggerItem key={b.title} className={b.span ?? ""}>
-              <div className="group h-full rounded-3xl border border-line bg-gradient-to-br from-surface/60 to-bg p-8 transition-all duration-300 hover:-translate-y-1 hover:border-gold/40">
-                <div className="mb-6 h-px w-12 bg-gold transition-all duration-300 group-hover:w-20" />
+              <div className="group h-full rounded-3xl border border-line bg-gradient-to-br from-surface/60 to-bg p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40">
+                <div className="mb-6 h-px w-12 bg-accent transition-all duration-300 group-hover:w-20" />
                 <h3 className="text-2xl text-ink">{b.title}</h3>
                 <p className="mt-2 leading-relaxed text-muted">{b.body}</p>
               </div>
@@ -241,9 +241,9 @@ export default function ShowcasePage() {
       <section className="mx-auto max-w-6xl px-5 py-20">
         <Reveal>
           <div className="glass-strong relative overflow-hidden rounded-[2rem] px-6 py-16 text-center sm:px-16">
-            <div className="pointer-events-none absolute -left-10 -bottom-10 h-48 w-48 rounded-full bg-gold/20 blur-[80px]" />
+            <div className="pointer-events-none absolute -left-10 -bottom-10 h-48 w-48 rounded-full bg-accent/20 blur-[80px]" />
             <h2 className="relative text-balance text-4xl text-ink sm:text-5xl">
-              Hold the <span className="text-gradient-gold italic">future</span>
+              Hold the <span className="text-gradient-accent">future</span>
             </h2>
             <p className="relative mx-auto mt-5 max-w-lg text-lg text-muted">
               Aura One ships worldwide with a 30-day return window and a two-year
@@ -251,7 +251,7 @@ export default function ShowcasePage() {
             </p>
             <Link
               href="/portfolio"
-              className="group relative mt-9 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-bright to-gold px-8 py-4 font-semibold text-bg transition-all duration-300 hover:shadow-[0_0_36px_rgba(232,180,60,0.45)]"
+              className="group relative mt-9 inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 font-semibold text-bg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-ink/20"
             >
               See more work
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

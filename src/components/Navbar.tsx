@@ -30,7 +30,7 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className={`flex w-full max-w-6xl items-center justify-between gap-4 rounded-full px-4 py-2.5 transition-all duration-300 sm:px-6 ${
-          scrolled ? "glass-strong shadow-lg shadow-black/40" : "glass"
+          scrolled ? "glass-strong shadow-lg shadow-ink/10" : "glass"
         }`}
       >
         <Link
@@ -38,7 +38,7 @@ export default function Navbar() {
           className="group flex items-center gap-2"
           aria-label="Aakaar home"
         >
-          <span className="grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-gold-bright to-gold text-bg transition-transform duration-300 group-hover:rotate-12">
+          <span className="grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-accent2 to-accent text-bg transition-transform duration-300 group-hover:rotate-12">
             <Sparkles className="h-4 w-4" />
           </span>
           <span className="font-serif text-xl tracking-tight text-ink">
@@ -61,7 +61,7 @@ export default function Navbar() {
                   {active && (
                     <motion.span
                       layoutId="nav-pill"
-                      className="absolute inset-0 -z-10 rounded-full bg-white/8 ring-1 ring-gold/30"
+                      className="absolute inset-0 -z-10 rounded-full bg-accent/10 ring-1 ring-accent/30"
                       transition={{ type: "spring", stiffness: 400, damping: 32 }}
                     />
                   )}
@@ -75,7 +75,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <Link
             href="/community"
-            className="group inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-gold-bright to-gold px-5 py-2 text-sm font-semibold text-bg transition-all duration-300 hover:shadow-[0_0_24px_rgba(232,180,60,0.4)]"
+            className="group inline-flex items-center gap-1.5 rounded-full bg-ink px-5 py-2 text-sm font-semibold text-bg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-ink/15"
           >
             Join us
           </Link>
@@ -111,12 +111,12 @@ export default function Navbar() {
                       href={link.href}
                       className={`flex items-center justify-between rounded-2xl px-4 py-3 text-base font-medium transition-colors ${
                         active
-                          ? "bg-white/8 text-ink"
-                          : "text-muted hover:bg-white/5 hover:text-ink"
+                          ? "bg-accent/10 text-ink"
+                          : "text-muted hover:bg-ink/5 hover:text-ink"
                       }`}
                     >
                       {link.label}
-                      {active && <span className="h-1.5 w-1.5 rounded-full bg-gold" />}
+                      {active && <span className="h-1.5 w-1.5 rounded-full bg-accent" />}
                     </Link>
                   </li>
                 );
@@ -124,7 +124,7 @@ export default function Navbar() {
               <li className="mt-2 px-1">
                 <Link
                   href="/community"
-                  className="block rounded-2xl bg-gradient-to-r from-gold-bright to-gold px-4 py-3 text-center text-base font-semibold text-bg"
+                  className="block rounded-2xl bg-ink px-4 py-3 text-center text-base font-semibold text-bg"
                 >
                   Join us
                 </Link>

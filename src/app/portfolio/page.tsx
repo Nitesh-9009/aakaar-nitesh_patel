@@ -41,7 +41,7 @@ export default function PortfolioPage() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden px-5 pt-40 pb-16">
-        <div className="pointer-events-none absolute -right-10 top-20 h-96 w-96 rounded-full bg-gold/12 blur-[130px]" />
+        <div className="pointer-events-none absolute -right-10 top-20 h-96 w-96 rounded-full bg-accent/12 blur-[130px]" />
         <div className="mx-auto max-w-5xl text-center">
           <Reveal direction="none">
             <Eyebrow>Selected work</Eyebrow>
@@ -52,7 +52,7 @@ export default function PortfolioPage() {
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
             className="mt-6 text-balance text-5xl leading-[1.05] text-ink sm:text-7xl"
           >
-            Work we&apos;re <span className="text-gradient-gold italic">proud</span> of
+            Work we&apos;re <span className="text-gradient-accent">proud</span> of
           </motion.h1>
           <Reveal delay={0.2}>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted">
@@ -78,7 +78,7 @@ export default function PortfolioPage() {
                 {filter === c && (
                   <motion.span
                     layoutId="filter-pill"
-                    className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-gold-bright to-gold"
+                    className="absolute inset-0 -z-10 rounded-full bg-ink"
                     transition={{ type: "spring", stiffness: 400, damping: 32 }}
                   />
                 )}
@@ -101,13 +101,13 @@ export default function PortfolioPage() {
                 className="group relative overflow-hidden rounded-3xl border border-line bg-surface/40"
               >
                 <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-gradient-to-br from-surface-2 to-bg">
-                  <span className="font-serif text-6xl text-line transition-all duration-500 group-hover:scale-110 group-hover:text-gold/30">
+                  <span className="font-serif text-6xl text-line transition-all duration-500 group-hover:scale-110 group-hover:text-accent/30">
                     {p.title.charAt(0)}
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/0 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <div className="absolute bottom-4 left-4 right-4 flex translate-y-4 items-center justify-between opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                     <span className="text-sm text-muted">{p.tag}</span>
-                    <span className="grid h-9 w-9 place-items-center rounded-full bg-gold text-bg">
+                    <span className="grid h-9 w-9 place-items-center rounded-full bg-accent text-bg">
                       <ArrowUpRight className="h-4 w-4" />
                     </span>
                   </div>
@@ -116,7 +116,7 @@ export default function PortfolioPage() {
                   <h3 className="text-lg text-ink">{p.title}</h3>
                   <span className="text-sm text-faint">{p.year}</span>
                 </div>
-                <span className="absolute left-4 top-4 rounded-full bg-bg/60 px-3 py-1 text-xs text-gold-soft ring-1 ring-gold/20 backdrop-blur">
+                <span className="absolute left-4 top-4 rounded-full bg-surface px-3 py-1 text-xs text-accent ring-1 ring-accent/20 backdrop-blur">
                   {p.category}
                 </span>
               </motion.article>
@@ -136,9 +136,9 @@ export default function PortfolioPage() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {process.map((step, i) => (
             <Reveal key={step.title} delay={i * 0.1}>
-              <div className="group h-full rounded-3xl border border-line bg-surface/40 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/40">
+              <div className="group h-full rounded-3xl border border-line bg-surface/40 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40">
                 <div className="flex items-center justify-between">
-                  <span className="grid h-12 w-12 place-items-center rounded-2xl bg-gold/10 text-gold transition-colors group-hover:bg-gold group-hover:text-bg">
+                  <span className="grid h-12 w-12 place-items-center rounded-2xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-bg">
                     <step.icon className="h-6 w-6" />
                   </span>
                   <span className="font-serif text-4xl text-line">0{i + 1}</span>
@@ -155,9 +155,9 @@ export default function PortfolioPage() {
       <section className="mx-auto max-w-6xl px-5 py-16">
         <Reveal>
           <div className="glass-strong relative overflow-hidden rounded-[2rem] px-6 py-16 text-center sm:px-16">
-            <div className="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-gold-bright/15 blur-[80px]" />
+            <div className="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-accent2/15 blur-[80px]" />
             <h2 className="relative text-balance text-4xl text-ink sm:text-5xl">
-              Have a project in <span className="text-gradient-gold italic">mind</span>?
+              Have a project in <span className="text-gradient-accent">mind</span>?
             </h2>
             <p className="relative mx-auto mt-5 max-w-lg text-lg text-muted">
               We take on a handful of partners each quarter. Let&apos;s see if
@@ -165,7 +165,7 @@ export default function PortfolioPage() {
             </p>
             <Link
               href="/community"
-              className="group relative mt-9 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-bright to-gold px-8 py-4 font-semibold text-bg transition-all duration-300 hover:shadow-[0_0_36px_rgba(232,180,60,0.45)]"
+              className="group relative mt-9 inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 font-semibold text-bg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-ink/20"
             >
               Let&apos;s talk
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

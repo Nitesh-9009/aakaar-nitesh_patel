@@ -77,11 +77,11 @@ export default function Home() {
       >
         <motion.div
           style={{ y: yDown }}
-          className="pointer-events-none absolute -left-20 top-32 h-72 w-72 rounded-full bg-gold/20 blur-[100px]"
+          className="pointer-events-none absolute -left-20 top-32 h-72 w-72 rounded-full bg-accent/20 blur-[100px]"
         />
         <motion.div
           style={{ y: yUp }}
-          className="pointer-events-none absolute -right-16 bottom-10 h-80 w-80 rounded-full bg-gold-bright/10 blur-[120px]"
+          className="pointer-events-none absolute -right-16 bottom-10 h-80 w-80 rounded-full bg-accent2/10 blur-[120px]"
         />
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent_30%,var(--color-bg)_75%)]" />
 
@@ -96,7 +96,7 @@ export default function Home() {
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
             className="mt-7 text-balance text-5xl leading-[1.05] text-ink sm:text-7xl lg:text-8xl"
           >
-            Crafting <span className="text-gradient-gold italic">form</span>
+            Crafting <span className="text-gradient-accent">form</span>
             <br />
             &amp; future.
           </motion.h1>
@@ -120,14 +120,14 @@ export default function Home() {
           >
             <Link
               href="/showcase"
-              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-bright to-gold px-7 py-3.5 font-semibold text-bg transition-all duration-300 hover:shadow-[0_0_36px_rgba(232,180,60,0.45)]"
+              className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 font-semibold text-bg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-ink/20"
             >
               Explore the work
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
             <Link
               href="/event"
-              className="inline-flex items-center gap-2 rounded-full border border-line px-7 py-3.5 font-medium text-ink transition-all duration-300 hover:border-gold/50 hover:bg-white/5"
+              className="inline-flex items-center gap-2 rounded-full border border-line px-7 py-3.5 font-medium text-ink transition-all duration-300 hover:border-accent/50 hover:bg-ink/5"
             >
               See upcoming event
             </Link>
@@ -144,7 +144,7 @@ export default function Home() {
             <motion.span
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.6, repeat: Infinity }}
-              className="h-1.5 w-1.5 rounded-full bg-gold"
+              className="h-1.5 w-1.5 rounded-full bg-accent"
             />
           </div>
         </motion.div>
@@ -162,7 +162,7 @@ export default function Home() {
             <Eyebrow>About the studio</Eyebrow>
             <h2 className="mt-6 text-4xl leading-tight text-ink sm:text-5xl">
               We design the{" "}
-              <span className="text-gradient-gold italic">shape</span> of what
+              <span className="text-gradient-accent">shape</span> of what
               comes next.
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-muted">
@@ -178,7 +178,7 @@ export default function Home() {
             </p>
             <Link
               href="/portfolio"
-              className="group mt-8 inline-flex items-center gap-2 font-medium text-gold"
+              className="group mt-8 inline-flex items-center gap-2 font-medium text-accent"
             >
               View our portfolio
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -193,9 +193,9 @@ export default function Home() {
                     {stats.map((s) => (
                       <div
                         key={s.label}
-                        className="rounded-2xl border border-line/60 bg-white/[0.02] p-5 text-center"
+                        className="rounded-2xl border border-line/60 bg-ink/[0.02] p-5 text-center"
                       >
-                        <div className="font-serif text-4xl text-gradient-gold">
+                        <div className="font-serif text-4xl text-gradient-accent">
                           <Counter to={s.to} suffix={s.suffix} />
                         </div>
                         <p className="mt-2 text-xs uppercase tracking-wider text-faint">
@@ -206,7 +206,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="animate-float absolute -right-4 -top-4 grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-gold-bright to-gold text-bg shadow-xl">
+              <div className="animate-float absolute -right-4 -top-4 grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-accent2 to-accent text-bg shadow-xl">
                 <Rocket className="h-7 w-7" />
               </div>
             </div>
@@ -226,8 +226,8 @@ export default function Home() {
         <Stagger className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
             <StaggerItem key={f.title}>
-              <div className="group h-full rounded-3xl border border-line bg-surface/40 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:bg-surface">
-                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-gold/10 text-gold transition-colors duration-300 group-hover:bg-gold group-hover:text-bg">
+              <div className="group h-full rounded-3xl border border-line bg-surface/40 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:bg-surface">
+                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-accent/10 text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-bg">
                   <f.icon className="h-6 w-6" />
                 </div>
                 <h3 className="mt-5 text-xl text-ink">{f.title}</h3>
@@ -242,11 +242,11 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-5 py-28">
         <Reveal>
           <div className="glass-strong relative overflow-hidden rounded-[2rem] px-6 py-16 text-center sm:px-16">
-            <div className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 rounded-full bg-gold/20 blur-[80px]" />
-            <div className="pointer-events-none absolute -bottom-10 -right-10 h-48 w-48 rounded-full bg-gold-bright/15 blur-[80px]" />
+            <div className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 rounded-full bg-accent/20 blur-[80px]" />
+            <div className="pointer-events-none absolute -bottom-10 -right-10 h-48 w-48 rounded-full bg-accent2/15 blur-[80px]" />
             <h2 className="relative text-balance text-4xl text-ink sm:text-5xl">
               Ready to give your idea a{" "}
-              <span className="text-gradient-gold italic">form</span>?
+              <span className="text-gradient-accent">form</span>?
             </h2>
             <p className="relative mx-auto mt-5 max-w-lg text-lg text-muted">
               Tell us what you&apos;re building. We&apos;ll bring the craft, the
@@ -255,14 +255,14 @@ export default function Home() {
             <div className="relative mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
                 href="/community"
-                className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-bright to-gold px-8 py-4 font-semibold text-bg transition-all duration-300 hover:shadow-[0_0_36px_rgba(232,180,60,0.45)]"
+                className="group inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 font-semibold text-bg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-ink/20"
               >
                 Join the community
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <a
                 href="mailto:hello@aakaar.studio"
-                className="inline-flex items-center gap-2 rounded-full border border-line px-8 py-4 font-medium text-ink transition-all hover:border-gold/50 hover:bg-white/5"
+                className="inline-flex items-center gap-2 rounded-full border border-line px-8 py-4 font-medium text-ink transition-all hover:border-accent/50 hover:bg-ink/5"
               >
                 Start a project
               </a>
