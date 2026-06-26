@@ -7,6 +7,8 @@ import { CalendarDays, MapPin, Clock, Ticket, Mic2, ArrowRight } from "lucide-re
 import Reveal from "@/components/Reveal";
 import { Stagger, StaggerItem } from "@/components/Stagger";
 import { SectionHeading, Eyebrow } from "@/components/Section";
+import Image from "next/image";
+import { img, IMAGES } from "@/lib/images";
 
 const EVENT_DATE = new Date();
 EVENT_DATE.setDate(EVENT_DATE.getDate() + 42);
@@ -129,6 +131,28 @@ export default function EventPage() {
             </div>
           </Reveal>
         </div>
+      </section>
+
+      {/* VENUE BANNER */}
+      <section className="mx-auto max-w-6xl px-5">
+        <Reveal>
+          <div className="relative aspect-[21/9] overflow-hidden rounded-[2rem]">
+            <Image
+              src={img(IMAGES.arch2)}
+              alt="IIT Bombay campus"
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 flex flex-wrap items-end justify-between gap-3">
+              <p className="font-serif text-2xl text-white sm:text-3xl">IIT Bombay, Powai</p>
+              <span className="rounded-full bg-white/15 px-4 py-1.5 text-sm text-white backdrop-blur">
+                3 days · 30+ events
+              </span>
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       {/* ABOUT */}

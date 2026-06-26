@@ -15,6 +15,8 @@ import Reveal from "@/components/Reveal";
 import { Stagger, StaggerItem } from "@/components/Stagger";
 import { SectionHeading, Eyebrow } from "@/components/Section";
 import Counter from "@/components/Counter";
+import Image from "next/image";
+import { img, IMAGES } from "@/lib/images";
 
 const stats = [
   { to: 5000, suffix: "+", label: "Participants" },
@@ -120,6 +122,27 @@ export default function CommunityPage() {
             </StaggerItem>
           ))}
         </Stagger>
+      </section>
+
+      {/* IMAGE BAND */}
+      <section className="mx-auto max-w-6xl px-5 py-8">
+        <Reveal>
+          <div className="relative aspect-[21/9] overflow-hidden rounded-[2rem]">
+            <Image
+              src={img(IMAGES.office)}
+              alt="Students collaborating at Aakaar"
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6">
+              <p className="max-w-md font-serif text-2xl text-white sm:text-3xl">
+                One festival. Thousands of civil minds.
+              </p>
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       {/* ABOUT / BENEFITS */}

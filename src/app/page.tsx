@@ -18,6 +18,8 @@ import { Stagger, StaggerItem } from "@/components/Stagger";
 import { SectionHeading, Eyebrow } from "@/components/Section";
 import Counter from "@/components/Counter";
 import Marquee from "@/components/Marquee";
+import Image from "next/image";
+import { img, IMAGES } from "@/lib/images";
 
 const features = [
   {
@@ -188,23 +190,27 @@ export default function Home() {
 
           <Reveal direction="left" delay={0.15}>
             <div className="relative">
-              <div className="glass rounded-3xl p-2">
-                <div className="rounded-[1.25rem] bg-gradient-to-br from-surface-2 to-bg p-8">
-                  <div className="grid grid-cols-2 gap-4">
-                    {stats.map((s) => (
-                      <div
-                        key={s.label}
-                        className="rounded-2xl border border-line/60 bg-ink/[0.02] p-5 text-center"
-                      >
-                        <div className="font-serif text-4xl text-gradient-accent">
-                          <Counter to={s.to} suffix={s.suffix} />
-                        </div>
-                        <p className="mt-2 text-xs uppercase tracking-wider text-faint">
-                          {s.label}
-                        </p>
+              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
+                <Image
+                  src={img(IMAGES.buildingLow)}
+                  alt="Modern civil engineering architecture"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent" />
+                <div className="absolute inset-x-4 bottom-4 grid grid-cols-2 gap-3">
+                  {stats.map((s) => (
+                    <div key={s.label} className="glass rounded-2xl p-4 text-center">
+                      <div className="font-serif text-3xl text-white">
+                        <Counter to={s.to} suffix={s.suffix} />
                       </div>
-                    ))}
-                  </div>
+                      <p className="mt-1 text-[11px] uppercase tracking-wider text-white/70">
+                        {s.label}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
               <div className="animate-float absolute -right-4 -top-4 grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-accent2 to-accent text-bg shadow-xl">

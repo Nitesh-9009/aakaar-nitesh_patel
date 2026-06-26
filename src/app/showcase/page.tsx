@@ -14,6 +14,8 @@ import {
 import Reveal from "@/components/Reveal";
 import { Stagger, StaggerItem } from "@/components/Stagger";
 import { SectionHeading, Eyebrow } from "@/components/Section";
+import Image from "next/image";
+import { img, IMAGES } from "@/lib/images";
 
 function TiltCard() {
   const ref = useRef<HTMLDivElement>(null);
@@ -44,14 +46,22 @@ function TiltCard() {
       style={{ transform }}
       className="glass relative aspect-square w-full max-w-md rounded-[2rem] p-8"
     >
-      <div className="flex h-full flex-col items-center justify-center rounded-[1.5rem] bg-gradient-to-br from-surface-2 via-bg to-bg">
-        <div className="animate-float grid h-40 w-40 place-items-center rounded-full bg-gradient-to-br from-accent2 to-accent shadow-[0_0_60px_rgba(37,99,235,0.20)]">
-          <Building2 className="h-16 w-16 text-bg" />
+      <div className="relative h-full overflow-hidden rounded-[1.5rem]">
+        <Image
+          src={img(IMAGES.skyline)}
+          alt="CENEX — Civil Engineering National Exhibition"
+          fill
+          sizes="(max-width: 1024px) 100vw, 40vw"
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 p-6">
+          <p className="font-serif text-2xl text-white">CENEX</p>
+          <p className="mt-1 text-sm text-white/70">Civil Engineering National Exhibition</p>
         </div>
-        <p className="mt-8 font-serif text-2xl text-ink">CENEX</p>
-        <p className="mt-1 text-sm text-muted">Civil Engineering National Exhibition</p>
       </div>
-      <span className="absolute right-6 top-6 rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent ring-1 ring-accent/30">
+      <span className="absolute right-6 top-6 rounded-full bg-accent/90 px-3 py-1 text-xs font-medium text-white ring-1 ring-white/20">
         Flagship
       </span>
     </motion.div>

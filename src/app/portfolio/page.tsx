@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, ArrowRight, GraduationCap, Compass, Trophy, Handshake } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { SectionHeading, Eyebrow } from "@/components/Section";
+import { img, IMAGES } from "@/lib/images";
 
 const categories = ["All", "Workshops", "Lectures", "Competitions", "Expo"] as const;
 type Category = (typeof categories)[number];
@@ -15,15 +17,16 @@ type Project = {
   category: Exclude<Category, "All">;
   year: string;
   tag: string;
+  img: string;
 };
 
 const projects: Project[] = [
-  { title: "Bridge Building", category: "Competitions", year: "2025", tag: "Flagship contest" },
-  { title: "Aakaar Lectures", category: "Lectures", year: "2025", tag: "Expert series" },
-  { title: "AutoCAD Lab", category: "Workshops", year: "2024", tag: "Hands-on training" },
-  { title: "Civil Expo", category: "Expo", year: "2026", tag: "Industry showcase" },
-  { title: "Concrete Canoe", category: "Competitions", year: "2024", tag: "National event" },
-  { title: "STAAD.Pro Lab", category: "Workshops", year: "2026", tag: "Software workshop" },
+  { title: "Bridge Building", category: "Competitions", year: "2025", tag: "Flagship contest", img: IMAGES.bridge },
+  { title: "Aakaar Lectures", category: "Lectures", year: "2025", tag: "Expert series", img: IMAGES.office },
+  { title: "AutoCAD Lab", category: "Workshops", year: "2024", tag: "Hands-on training", img: IMAGES.engineer },
+  { title: "Civil Expo", category: "Expo", year: "2026", tag: "Industry showcase", img: IMAGES.buildingLow },
+  { title: "Concrete Canoe", category: "Competitions", year: "2024", tag: "National event", img: IMAGES.worker },
+  { title: "STAAD.Pro Lab", category: "Workshops", year: "2026", tag: "Software workshop", img: IMAGES.bridge2 },
 ];
 
 const process = [
@@ -100,14 +103,18 @@ export default function PortfolioPage() {
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="group relative overflow-hidden rounded-3xl border border-line bg-surface/40"
               >
-                <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-gradient-to-br from-surface-2 to-bg">
-                  <span className="font-serif text-6xl text-line transition-all duration-500 group-hover:scale-110 group-hover:text-accent/30">
-                    {p.title.charAt(0)}
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/0 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-surface-2">
+                  <Image
+                    src={img(p.img)}
+                    alt={p.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-90" />
                   <div className="absolute bottom-4 left-4 right-4 flex translate-y-4 items-center justify-between opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                    <span className="text-sm text-muted">{p.tag}</span>
-                    <span className="grid h-9 w-9 place-items-center rounded-full bg-accent text-bg">
+                    <span className="text-sm font-medium text-white">{p.tag}</span>
+                    <span className="grid h-9 w-9 place-items-center rounded-full bg-accent text-white">
                       <ArrowUpRight className="h-4 w-4" />
                     </span>
                   </div>
