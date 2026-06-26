@@ -23,7 +23,7 @@ const PROFILE = {
   tagline: "B.Tech · IIT Bombay · 2026",
   // Replace /profile.svg with your own photo: drop a file in /public
   // (e.g. /nitesh.jpg) and change the path below.
-  photo: "/profile.svg",
+  photo: "/nitesh.jpg",
   intro:
     "I'm a student at IIT Bombay whose real passion is technology. I'm a self-taught web developer who loves building fast, polished interfaces with React, Next.js and modern tooling — and I'm always tinkering with new things across software and the web.",
   email: "nitesh6742patel@gmail.com",
@@ -110,7 +110,6 @@ export default function PortfolioPage() {
                   sizes="(max-width: 1024px) 80vw, 380px"
                   className="object-cover"
                   priority
-                  unoptimized
                 />
               </div>
               <div className="glass-strong absolute -bottom-5 -left-5 flex items-center gap-3 rounded-2xl px-5 py-3">
