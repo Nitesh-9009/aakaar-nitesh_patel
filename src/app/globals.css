@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+/*
+  Aakaar — Liquid Glass / Premium Dark design system
+  Adapted from design-system/aakaar/MASTER.md (dark-mode variant)
+*/
+
+@theme inline {
+  /* Palette */
+  --color-bg: #0a0807;
+  --color-bg-soft: #100d0b;
+  --color-surface: #16120f;
+  --color-surface-2: #1c1714;
+  --color-line: #2a221d;
+
+  --color-gold: #ca8a04;
+  --color-gold-bright: #e8b43c;
+  --color-gold-soft: #f3d99b;
+
+  --color-ink: #faf7f2;
+  --color-muted: #b8ada0;
+  --color-faint: #7c726a;
+
+  /* Fonts (wired in layout.tsx) */
+  --font-serif: var(--font-bodoni), Georgia, serif;
+  --font-sans: var(--font-jost), system-ui, sans-serif;
+
+  /* Easing */
+  --ease-fluid: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  --background: #0a0807;
+  --foreground: #faf7f2;
+  color-scheme: dark;
+}
+
+* {
+  border-color: var(--color-line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Ambient glow background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(60rem 60rem at 80% -10%, rgba(202, 138, 4, 0.10), transparent 60%),
+    radial-gradient(50rem 50rem at 0% 30%, rgba(202, 138, 4, 0.06), transparent 60%),
+    radial-gradient(40rem 40rem at 100% 100%, rgba(232, 180, 60, 0.05), transparent 60%);
+  pointer-events: none;
+}
+
+::selection {
+  background: rgba(202, 138, 4, 0.3);
+  color: #fff;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Utilities ---------- */
+
+@utility glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@utility glass-strong {
+  background: rgba(20, 16, 13, 0.65);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@utility text-gradient-gold {
+  background: linear-gradient(120deg, #f3d99b 0%, #e8b43c 40%, #ca8a04 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+:where(a, button, input, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-gold-bright);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--color-gold), #6b4a02);
+  border-radius: 8px;
+  border: 2px solid var(--color-bg);
+}
+
+/* ---------- Animations ---------- */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 30s linear infinite; }
+
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.animate-spin-slow { animation: spin-slow 24s linear infinite; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-marquee,
+  .animate-spin-slow,
+  .animate-float { animation: none !important; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
